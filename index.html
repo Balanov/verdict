@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101310" />
+    <meta name="description" content="Verdict — a 197 KB local semantic verifier for AI agent tool calls. Exit code 0 is not proof." />
+    <meta property="og:title" content="Verdict — Exit code 0 is not proof" />
+    <meta property="og:description" content="Tiny semantic outcome verification for AI agents. Local, open and free." />
+    <meta property="og:image" content="./social.svg" />
+    <link rel="icon" href="./logo.svg" type="image/svg+xml" />
+    <title>Verdict · Balanov Research</title>
+    <script type="module" crossorigin src="./assets/index-B-BL-fQV.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CR51vGmw.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="https://balanov.pro/" aria-label="Balanov home">BALANOV<span>·RESEARCH</span></a>
+      <nav class="nav" aria-label="Project links">
+        <a href="#benchmark" data-i18n="nav_benchmark">Benchmark</a>
+        <a href="https://github.com/Balanov/verdict">GitHub</a>
+        <select id="language" aria-label="Language">
+          <option value="en">EN</option><option value="ru">РУ</option><option value="zh">中文</option><option value="es">ES</option>
+        </select>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero shell">
+        <div class="eyebrow"><span class="pulse"></span><span data-i18n="hero_kicker">TINY SEMANTIC VERIFIER FOR AI AGENTS</span><span class="version">V0.1 · RESEARCH PREVIEW</span></div>
+        <h1>Verdict<span class="hero-dot">.</span></h1>
+        <div class="hero-grid">
+          <p class="hero-tag" data-i18n="hero_tag">EXIT CODE 0 IS NOT PROOF.</p>
+          <div>
+            <p class="hero-lead" data-i18n="hero_lead">A 197 KB model that reads a command, its output and exit code — then classifies the evidence as success, failure, blocked or unknown.</p>
+            <div class="actions">
+              <a class="button primary" href="#demo" data-i18n="try_demo">Run the demo</a>
+              <a class="button" href="https://github.com/Balanov/verdict" data-i18n="code">Code</a>
+              <a class="button" href="https://huggingface.co/BalanovAN/verdict" data-i18n="weights">Weights</a>
+            </div>
+          </div>
+        </div>
+        <dl class="stats">
+          <div><dt data-i18n="stat_size">INT8 WEIGHTS</dt><dd>197 <span>KB</span></dd></div>
+          <div><dt data-i18n="stat_latency">MEDIAN CPU INFERENCE</dt><dd>0.54 <span>ms</span></dd></div>
+          <div><dt data-i18n="stat_f1">HELD-OUT MACRO-F1</dt><dd>93.2 <span>%</span></dd></div>
+          <div><dt data-i18n="stat_license">CODE + WEIGHTS</dt><dd>Apache<span>-2.0</span></dd></div>
+        </dl>
+      </section>
+
+      <section id="demo" class="section shell">
+        <div class="section-heading"><span class="index">01</span><div><h2 data-i18n="demo_title">Run it. Right here.</h2><p data-i18n="demo_lead">The actual quantized model runs locally in this tab. Your logs are never uploaded.</p></div></div>
+        <div class="demo-wrap">
+          <form id="demo-form" class="terminal">
+            <div class="terminal-top"><span>VERDICT / LOCAL INFERENCE</span><span id="model-status" data-i18n="loading">Loading model…</span></div>
+            <div class="preset-row" aria-label="Examples">
+              <button type="button" data-preset="success">01 · SUCCESS</button>
+              <button type="button" data-preset="failure">02 · FAILURE</button>
+              <button type="button" data-preset="blocked">03 · BLOCKED</button>
+              <button type="button" data-preset="unknown">04 · UNKNOWN</button>
+            </div>
+            <div class="field-row">
+              <label><span data-i18n="command">Command</span><input id="command" value="pytest tests/" autocomplete="off" spellcheck="false" /></label>
+              <label class="code-field"><span data-i18n="exit_code">Exit code</span><input id="exit-code" type="number" value="0" /></label>
+            </div>
+            <label><span>stdout</span><textarea id="stdout" rows="5" spellcheck="false">collected 0 items
+no tests ran in 0.01s</textarea></label>
+            <label><span>stderr</span><textarea id="stderr" rows="2" spellcheck="false" placeholder=""></textarea></label>
+            <button id="classify" class="button primary classify" type="submit" disabled data-i18n="classify">Classify tool outcome</button>
+          </form>
+          <aside class="result-panel" aria-live="polite">
+            <span class="result-caption" data-i18n="verdict">VERDICT</span>
+            <strong id="result-label">—</strong>
+            <p id="result-note" data-i18n="result_waiting">Run the model to inspect the output.</p>
+            <div id="probabilities" class="probabilities"></div>
+            <pre id="json-result">{}</pre>
+          </aside>
+        </div>
+      </section>
+
+      <section id="benchmark" class="section shell">
+        <div class="section-heading"><span class="index">02</span><div><h2 data-i18n="bench_title">Small model. Measurable job.</h2><p data-i18n="bench_lead">192 synthetic examples across 48 CLI families entirely absent from training. No production logs. No hidden test data.</p></div></div>
+        <div class="table-scroll"><table>
+          <thead><tr><th data-i18n="model">MODEL</th><th data-i18n="accuracy">ACCURACY ↑</th><th>MACRO-F1 ↑</th><th data-i18n="size">SIZE ↓</th><th data-i18n="median">MEDIAN ↓</th></tr></thead>
+          <tbody>
+            <tr class="best"><th>Verdict 0.1 · int8</th><td>93.2%</td><td>93.2%</td><td>197 KB</td><td>0.54 ms</td></tr>
+            <tr><th data-i18n="baseline">Exit-code baseline</th><td>47.9%</td><td>31.9%</td><td>—</td><td>—</td></tr>
+          </tbody>
+        </table></div>
+        <p class="fineprint" data-i18n="bench_note">Training: 1,440 records / 60 families. Latency: 576 predictions on Windows 11, AMD64, Python 3.12. Synthetic held-out performance is not production reliability.</p>
+      </section>
+
+      <section class="section shell">
+        <div class="section-heading"><span class="index">03</span><div><h2 data-i18n="taxonomy_title">Four outcomes. One JSON.</h2><p data-i18n="taxonomy_lead">A narrow contract that an agent can act on — with the uncertainty left visible.</p></div></div>
+        <div class="taxonomy">
+          <article><span class="dot success"></span><h3>success</h3><p data-i18n="success_desc">Positive evidence that the operation completed.</p></article>
+          <article><span class="dot failure"></span><h3>failure</h3><p data-i18n="failure_desc">A concrete assertion, build or application failure.</p></article>
+          <article><span class="dot blocked"></span><h3>blocked</h3><p data-i18n="blocked_desc">Permissions, dependencies, network or environment prevented execution.</p></article>
+          <article><span class="dot unknown"></span><h3>unknown</h3><p data-i18n="unknown_desc">Zero tests, skipped work, dry runs, truncation or insufficient evidence.</p></article>
+        </div>
+      </section>
+
+      <section class="section shell split-section">
+        <div><span class="index">04</span><h2 data-i18n="integrate_title">Drop into your harness.</h2><p data-i18n="integrate_lead">Pure Python inference. No runtime dependencies, GPU, tokenizer downloads or telemetry.</p><a class="text-link" href="https://github.com/Balanov/verdict#install-and-run" data-i18n="read_docs">Read the documentation →</a></div>
+        <div class="code-card"><button class="copy-code" data-copy-target="install-code" data-i18n="copy">Copy</button><pre id="install-code">python -m pip install "git+https://github.com/Balanov/verdict.git"
+
+from verdict_tiny import Verdict
+
+model = Verdict()
+result = model.predict(
+    command="pytest tests/",
+    exit_code=0,
+    stdout="collected 0 items",
+)</pre></div>
+      </section>
+
+      <section class="section shell warning-section">
+        <span class="index">05</span><div><h2 data-i18n="limits_title">Useful signal. Not absolute truth.</h2><p data-i18n="limits_lead">Verdict is an advisory classifier trained on synthetic, English-biased CLI output. It does not prove task completion, code correctness or safety. Keep deterministic checks and authoritative environment-state verification as the source of truth.</p></div>
+      </section>
+
+      <section class="section shell cite-section">
+        <div><span class="index">06</span><h2 data-i18n="cite_title">Cite this work</h2><p>ANTON BALANOV · 2026</p></div>
+        <div class="code-card"><button class="copy-code" data-copy-target="citation" data-i18n="copy">Copy</button><pre id="citation">@misc{balanov2026verdict,
+  title  = {Verdict: Tiny Semantic Outcome Verification for AI Agents},
+  author = {Balanov, Anton},
+  year   = {2026},
+  url    = {https://balanov.pro/research/verdict/}
+}</pre></div>
+      </section>
+    </main>
+
+    <footer class="footer shell">
+      <strong data-i18n="footer_line">Free to fork. Free to modify. Free to ship.</strong>
+      <div><a href="https://github.com/Balanov/verdict/blob/main/LICENSE">Apache-2.0 · <span data-i18n="footer_code">code + weights</span></a><a href="https://github.com/Balanov/verdict/blob/main/data/LICENSE">CC0-1.0 · <span data-i18n="footer_data">synthetic data</span></a></div>
+      <span>© 2026 BALANOV · V0.1</span>
+    </footer>
+  </body>
+</html>

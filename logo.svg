@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">Verdict</title>
+  <desc id="desc">A terminal prompt becoming a verification check</desc>
+  <rect width="128" height="128" rx="28" fill="#101310"/>
+  <path d="M28 35 52 64 28 93" fill="none" stroke="#f2f4ed" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="m57 78 15 15 31-43" fill="none" stroke="#c7ff4a" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter"/>
+</svg>
