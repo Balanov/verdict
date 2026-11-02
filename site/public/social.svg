@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#101310"/>
+  <path d="M92 82h1016v466H92z" fill="none" stroke="#343a31" stroke-width="2"/>
+  <path d="m145 196 52 63-52 63" fill="none" stroke="#f2f4ed" stroke-width="22"/>
+  <path d="m215 294 32 32 68-94" fill="none" stroke="#c7ff4a" stroke-width="22"/>
+  <text x="370" y="278" fill="#f2f4ed" font-family="Arial,Helvetica,sans-serif" font-size="116" font-weight="700" letter-spacing="-5">VERDICT</text>
+  <text x="145" y="430" fill="#c7ff4a" font-family="Consolas,monospace" font-size="34">EXIT CODE 0 IS NOT PROOF.</text>
+  <text x="145" y="490" fill="#a5ac9e" font-family="Arial,Helvetica,sans-serif" font-size="24">197 KB · LOCAL · APACHE-2.0</text>
+</svg>

@@ -1,0 +1,30 @@
+{
+  "format": "verdict-q8-v1",
+  "version": "0.1.0",
+  "labels": [
+    "success",
+    "failure",
+    "blocked",
+    "unknown"
+  ],
+  "n_features": 49152,
+  "n_char": 32768,
+  "n_word": 16384,
+  "scales": [
+    0.0021030072152145264,
+    0.001970106691826047,
+    0.001982807409106277,
+    0.0020848008122031146
+  ],
+  "bias": [
+    0.02159261517226696,
+    -0.037206023931503296,
+    0.010094499215483665,
+    0.0055190445855259895
+  ],
+  "quantization": "signed-int8-per-class",
+  "feature_hash": "fnv1a32-char3-5-word1-3-number-normalized-semantic-counts-v1",
+  "input_limit_chars": 12288,
+  "training_records": 1440,
+  "evaluation": "held-out-template-families"
+}

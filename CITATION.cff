@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+title: "Verdict: Tiny Semantic Outcome Verification for AI Agents"
+message: "If you use Verdict, please cite it as below."
+type: software
+authors:
+  - family-names: Balanov
+    given-names: Anton
+version: 0.1.0
+date-released: 2026-11-02
+url: "https://balanov.pro/research/verdict/"
+repository-code: "https://github.com/Balanov/verdict"
+license: Apache-2.0
