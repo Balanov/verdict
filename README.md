@@ -1,8 +1,25 @@
 <div align="center">
-  <img src="assets/logo.svg" alt="Verdict logo" width="104">
-  <h1>VERDICT</h1>
-  <p><strong>Exit code 0 is not proof.</strong></p>
-  <p>A 197 KB local model that reads a CLI tool call and returns<br><code>success</code>, <code>failure</code>, <code>blocked</code>, or <code>unknown</code>.</p>
+  <img src="docs/readme/hero.png" alt="VERDICT — exit code 0 is not proof. An actual local prediction returns unknown when pytest collects zero tests." width="100%">
+  <p><strong>A 197 KB local semantic outcome classifier for CLI tool calls.</strong></p>
+  <p><code>success</code> · <code>failure</code> · <code>blocked</code> · <code>unknown</code></p>
+  <p>
+    <a href="#install-and-run">Install and run</a> ·
+    <a href="#benchmark">Benchmark</a> ·
+    <a href="#model">Model</a> ·
+    <a href="#output-contract">Output contract</a> ·
+    <a href="https://balanov.pro/research/verdict/">Browser demo</a> ·
+    <a href="README_RU.md">Русский</a>
+  </p>
+  <p>
+    <a href="pyproject.toml"><img src="https://img.shields.io/badge/Python-3.10%2B-3776ab?logo=python&logoColor=white" alt="Python 3.10+"></a>
+    <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-green.svg" alt="Apache-2.0 license"></a>
+    <a href="https://huggingface.co/BalanovAN/verdict"><img src="https://img.shields.io/badge/weights-Hugging%20Face-yellow?logo=huggingface&logoColor=white" alt="Model weights on Hugging Face"></a>
+  </p>
+</div>
+
+<div align="center">
+  <img src="docs/readme/demo.gif" alt="Actual Verdict prediction for pytest with zero collected tests: label unknown, confidence 0.999981, advisory true" width="100%">
+  <p><sub>An actual local prediction; selected output fields are shown. Verdict reads the evidence rather than trusting the process exit code.</sub></p>
 </div>
 
 Verdict is a research preview of a semantic outcome layer for coding agents, CI runners, and tool-using systems. It looks beyond the process exit code and reads the command, stdout, and stderr. Inference runs locally on CPU with **no Python dependencies**.
@@ -25,6 +42,11 @@ Evaluated on **192 synthetic examples from 48 CLI families entirely absent from 
 Latency is the median of 576 predictions on Windows 11 / AMD64 / Python 3.12, including feature extraction and the Python API call. These are reproducibility measurements, not cross-hardware promises. See [`bench/results.json`](bench/results.json) and reproduce with `python training/train.py`.
 
 **The corpus is synthetic and English-biased.** The benchmark measures generalization across held-out templates, not reliability on production agent traces. Real-trace validation is the next milestone.
+
+<div align="center">
+  <img src="docs/readme/model.png" alt="Verdict inference path, four output labels, and macro-F1 comparison: 93.2 percent versus 31.9 percent for the exit-code baseline on synthetic held-out data" width="100%">
+  <p><sub>The mechanism, output contract and measurement context. <a href="bench/results.json">Raw benchmark data</a> · <a href="#reproduce">Reproduce the model</a>.</sub></p>
+</div>
 
 ## Install and run
 
