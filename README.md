@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="docs/readme/hero-v2.png" alt="VERDICT — exit code 0 is not proof; the actual local prediction returns unknown for zero collected tests" width="100%">
+  <img src="docs/readme/hero.png" alt="VERDICT — exit code 0 is not proof. An actual local prediction returns unknown when pytest collects zero tests." width="100%">
   <p><strong>A 197 KB local semantic outcome classifier for CLI tool calls.</strong></p>
   <p><code>success</code> · <code>failure</code> · <code>blocked</code> · <code>unknown</code></p>
   <p>

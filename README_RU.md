@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="docs/readme/hero-v2.png" alt="VERDICT — exit 0 не является доказательством; локальная модель возвращает unknown для нуля собранных тестов" width="100%">
+  <img src="docs/readme/hero.png" alt="VERDICT — exit 0 не является доказательством; при нуле собранных тестов модель возвращает unknown" width="100%">
   <p><strong>Локальная модель размером 197 КБ для семантической классификации результата CLI-вызова.</strong></p>
   <p><a href="README.md">English</a> · <a href="#запуск">Запуск</a> · <a href="#четыре-результата">Четыре результата</a> · <a href="#измерения">Измерения</a> · <a href="https://balanov.pro/research/verdict/">Демо в браузере</a></p>
 </div>
