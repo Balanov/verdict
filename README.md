@@ -140,6 +140,14 @@ weights/             release weights and config
 site/                multilingual research page and browser demo
 ```
 
+## Related projects
+
+- [uncut](https://github.com/Balanov/uncut) — the lossless, headless coding-agent harness.
+- [latch](https://github.com/Balanov/latch) — one tiny HTTPS contract between any agent and any service.
+- [mcp-attest](https://github.com/Balanov/mcp-attest) — an authorization conformance harness for MCP servers.
+- [equal](https://github.com/Balanov/equal) — turns real API traffic into a local sandbox and an OpenAPI spec.
+
+
 ## License
 
 Code and model weights: **Apache-2.0**. Synthetic dataset: **CC0-1.0**. Fork it, modify it, ship it. See [`LICENSE`](LICENSE) and [`data/LICENSE`](data/LICENSE).
