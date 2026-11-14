@@ -10,6 +10,7 @@ from pathlib import Path
 TOKEN_RE = re.compile(r"\w+|[^\w\s]", re.UNICODE)
 NUMBER_RE = re.compile(r"(?<![\w])\d+(?:[.,]\d+)*(?![\w])")
 DEFAULT_WEIGHTS = Path(__file__).resolve().parent / "weights" / "verdict-q8.bin"
+FEATURE_HASH = "fnv1a32-char3-5-word1-3-number-normalized-semantic-counts-v1"
 
 
 def _fnv1a(value: str) -> int:
@@ -43,6 +44,9 @@ class Verdict:
         self.config = json.loads(raw[8:8 + header_size])
         if self.config.get("format") != "verdict-q8-v1":
             raise ValueError("Unsupported Verdict artifact")
+        feature_hash = self.config.get("feature_hash")
+        if feature_hash != FEATURE_HASH:
+            raise ValueError(f"Incompatible Verdict feature hash: expected {FEATURE_HASH!r}, got {feature_hash!r}")
         self.labels = tuple(self.config["labels"])
         self.n_features = int(self.config["n_features"])
         self.n_char = int(self.config["n_char"])
