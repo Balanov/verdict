@@ -12,6 +12,7 @@
   </p>
   <p>
     <a href="https://github.com/Balanov/verdict/actions/workflows/ci.yml"><img src="https://github.com/Balanov/verdict/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+    <a href="https://github.com/Balanov/verdict/releases/latest"><img src="https://img.shields.io/github/v/release/Balanov/verdict" alt="Latest release"></a>
     <a href="pyproject.toml"><img src="https://img.shields.io/badge/Python-3.10%2B-3776ab?logo=python&logoColor=white" alt="Python 3.10+"></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-green.svg" alt="Apache-2.0 license"></a>
     <a href="https://huggingface.co/BalanovAN/verdict"><img src="https://img.shields.io/badge/weights-Hugging%20Face-yellow?logo=huggingface&logoColor=white" alt="Model weights on Hugging Face"></a>
