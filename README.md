@@ -7,7 +7,6 @@
     <a href="#benchmark">Benchmark</a> ·
     <a href="#model">Model</a> ·
     <a href="#output-contract">Output contract</a> ·
-    <a href="https://balanov.pro/verdict/">Product page</a> ·
     <a href="https://balanov.pro/research/verdict/">Browser demo</a> ·
     <a href="README_RU.md">Русский</a>
   </p>
