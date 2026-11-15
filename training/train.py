@@ -21,7 +21,7 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from training.data import LABELS, build  # noqa: E402
 from training.features import format_input, sparse_matrix  # noqa: E402
-from verdict_tiny.model import Verdict  # noqa: E402
+from verdict_tiny.model import FEATURE_HASH, Verdict  # noqa: E402
 
 
 def dump_jsonl(path: Path, records: list[dict]) -> None:
@@ -55,7 +55,7 @@ def main() -> None:
         "format": "verdict-q8-v1", "version": "0.1.0", "labels": list(LABELS),
         "n_features": int(classifier.coef_.shape[1]), "n_char": 1 << 15,
         "n_word": 1 << 14, "scales": scales, "bias": classifier.intercept_.tolist(),
-        "quantization": "signed-int8-per-class", "feature_hash": "fnv1a32-char3-5-word1-3-number-normalized-semantic-counts-v1",
+        "quantization": "signed-int8-per-class", "feature_hash": FEATURE_HASH,
         "input_limit_chars": 12288, "training_records": len(train),
         "evaluation": "held-out-template-families",
     }
