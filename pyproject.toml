@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "verdict-tiny"
-version = "0.1.0"
+version = "0.1.1"
 description = "A tiny, local semantic verifier for CLI tool outcomes"
 readme = "README.md"
 requires-python = ">=3.10"
